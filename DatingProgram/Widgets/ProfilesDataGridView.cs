@@ -9,7 +9,7 @@ namespace DatingProgram.Widgets
 {
     internal class ProfilesDataGridView
     { 
-        private DataBase actualProfilesBase;
+        private DataBase dataBase;
 
         private DataGridView dataGridView;
         private Label emptyTableLabel;
@@ -21,7 +21,7 @@ namespace DatingProgram.Widgets
 
         public ProfilesDataGridView(DataGridView dataGridView, Label emptyTableLabel)
         {
-            actualProfilesBase = DataBaseAccess.InstantiateProfilesBase();
+            dataBase = DataBaseAccess.InstantiateProfilesBase();
 
             this.dataGridView = dataGridView;
             this.emptyTableLabel = emptyTableLabel;
@@ -60,15 +60,16 @@ namespace DatingProgram.Widgets
         public void UpdateTable() 
         {
             dataGridView.ClearSelection();
-            actualProfilesBase.OpenConnection();
+            dataBase.OpenConnection();
 
             DataTable tempTable = new DataTable();
-            DataTable tableToShow = TableTools.FillProfilesTable(new DataTable());
+            DataTable tableToShow = new DataTable();
+            TableTools.AddColumnsToProfilesTable(tableToShow);
 
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM ActualProfiles", actualProfilesBase.Connection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM ActualProfiles", dataBase.Connection);
             adapter.Fill(tempTable);
 
-            actualProfilesBase.CloseConnection();
+            dataBase.CloseConnection();
             for (int i = 0; i < tempTable.Rows.Count; i++)
             {
                 if (CheckRow(tempTable.Rows[i]))

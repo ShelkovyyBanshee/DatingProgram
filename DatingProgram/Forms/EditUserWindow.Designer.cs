@@ -53,9 +53,9 @@
             this.mainTitleLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mainTitleLabel.Location = new System.Drawing.Point(12, 9);
             this.mainTitleLabel.Name = "mainTitleLabel";
-            this.mainTitleLabel.Size = new System.Drawing.Size(518, 55);
+            this.mainTitleLabel.Size = new System.Drawing.Size(529, 55);
             this.mainTitleLabel.TabIndex = 0;
-            this.mainTitleLabel.Text = "Редактирование пофиля";
+            this.mainTitleLabel.Text = "Редактирование пофиля ";
             // 
             // genderLabel
             // 
@@ -208,6 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(591, 749);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxCity);

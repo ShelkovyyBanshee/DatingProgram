@@ -342,6 +342,7 @@ namespace DatingProgram.Forms
             this.seeArchiveButton.TabIndex = 23;
             this.seeArchiveButton.Text = "Посмотреть архив";
             this.seeArchiveButton.UseVisualStyleBackColor = true;
+            this.seeArchiveButton.Click += new System.EventHandler(this.seeArchiveButton_Click);
             // 
             // MainWindow
             // 

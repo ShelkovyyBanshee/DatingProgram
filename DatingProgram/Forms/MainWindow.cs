@@ -8,7 +8,7 @@ namespace DatingProgram.Forms
     public partial class MainWindow : Form
     {
         // Доступ к базе данных
-        private DataBase actualProfilesBase;
+        private DataBase dataBase;
 
         // Дополнительные виджеты
         private ProfilesDataGridView profilesTable;
@@ -16,7 +16,7 @@ namespace DatingProgram.Forms
 
         public MainWindow()
         {
-            actualProfilesBase = DataBaseAccess.InstantiateProfilesBase();
+            dataBase = DataBaseAccess.InstantiateProfilesBase();
             InitializeComponent();
             InitializeAdditionalWidgets();
             InitializeFilters();
@@ -138,6 +138,12 @@ namespace DatingProgram.Forms
             numericAgeSecond.ValueChanged -= numericAgeSecond_ValueChanged;
             ageFilter.UpperValueChanged();
             numericAgeSecond.ValueChanged += numericAgeSecond_ValueChanged;
+        }
+
+        private void seeArchiveButton_Click(object sender, EventArgs e)
+        {
+            var archiveWindow = new ArchiveWindow();
+            archiveWindow.ShowDialog();
         }
 
         private GenderFilterStatus GetGenderFilterStatus()

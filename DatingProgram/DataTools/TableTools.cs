@@ -1,11 +1,13 @@
 ﻿using System.Data;
 using System;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace DatingProgram.DataTools
 {
     internal static class TableTools
     {
-        public static DataTable FillProfilesTable(DataTable table)
+        public static void AddColumnsToProfilesTable(DataTable table)
         {
             table.Columns.Add("Регистрационный номер");
             table.Columns.Add("Дата регистрации");
@@ -15,7 +17,6 @@ namespace DatingProgram.DataTools
             table.Columns.Add("Город");
             table.Columns.Add("Информация о себе");
             table.Columns.Add("Требования к партнеру");
-            return table;
         }
 
         public static object[] DataRowToObject(DataRow row)
@@ -26,16 +27,26 @@ namespace DatingProgram.DataTools
             var name = row.Field<String>("name");
             var age = row.Field<int>("age");
             var city = row.Field<String>("city");
-            var discription = row.Field<String>("description");
+            var description = row.Field<String>("description");
             var contract = row.Field<String>("contract");
 
-            object[] result = { regId, regDate, gender, name, age, city, discription, contract};
+            object[] result = { regId, regDate, gender, name, age, city, description, contract};
             return result;
         }
 
         public static void IncludeRow(DataTable table, DataRow row)
         {
             table.Rows.Add(DataRowToObject(row));
+        }
+
+        public static void FillProfilesTable(DataTable table, SqlDataAdapter adapter)
+        {
+            DataTable tempTable = new DataTable();
+            adapter.Fill(tempTable);
+            AddColumnsToProfilesTable(table);
+            
+            foreach (DataRow row in tempTable.Rows)
+                table.Rows.Add(DataRowToObject(row));
         }
     }
 }

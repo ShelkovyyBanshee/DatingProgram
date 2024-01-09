@@ -8,14 +8,7 @@ using System.Windows.Forms;
 namespace DatingProgram.Widgets
 {
     internal class ProfilesDataGridView
-    {
-        public enum GenderFilterStatus
-        {
-            NoFilter,
-            Male,
-            Female
-        }
-
+    { 
         private DataBase actualProfilesBase;
 
         private DataGridView dataGridView;

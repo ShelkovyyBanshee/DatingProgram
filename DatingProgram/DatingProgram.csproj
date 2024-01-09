@@ -79,6 +79,8 @@
       <DependentUpon>NewUserWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTools\TableTools.cs" />
+    <Compile Include="Widgets\AgeFilter.cs" />
+    <Compile Include="Widgets\GenderFilterStatus.cs" />
     <Compile Include="Widgets\ProfilesDataGridView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

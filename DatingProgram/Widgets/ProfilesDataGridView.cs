@@ -12,17 +12,19 @@ namespace DatingProgram.Widgets
         private DataBase actualProfilesBase;
 
         private DataGridView dataGridView;
+        private Label emptyTableLabel;
 
         private GenderFilterStatus genderFilterStatus;
         private string filterCityName;
         private int bottomOrSingleAge;
         private int upperAge;
 
-        public ProfilesDataGridView(DataGridView dataGridView)
+        public ProfilesDataGridView(DataGridView dataGridView, Label emptyTableLabel)
         {
             actualProfilesBase = DataBaseAccess.InstantiateProfilesBase();
 
             this.dataGridView = dataGridView;
+            this.emptyTableLabel = emptyTableLabel;
 
             genderFilterStatus = GenderFilterStatus.NoFilter;
             bottomOrSingleAge = upperAge = -1;
@@ -76,6 +78,8 @@ namespace DatingProgram.Widgets
             }
 
             dataGridView.DataSource = tableToShow;
+
+            emptyTableLabel.Visible = dataGridView.Rows.Count == 0;
         }
 
         private bool CheckRow(DataRow row)

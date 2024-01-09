@@ -24,7 +24,7 @@ namespace DatingProgram.Forms
 
         private void InitializeAdditionalWidgets()
         {
-            profilesTable = new ProfilesDataGridView(dataGridView);
+            profilesTable = new ProfilesDataGridView(dataGridView, emptyTableLabel);
 
             ageFilter = new AgeFilter(numericAgeFirst, numericAgeSecond, ageLabelPart1,
                 ageLabelPart2, profilesTable);
@@ -47,7 +47,6 @@ namespace DatingProgram.Forms
         private void MainWindow_Load(object sender, EventArgs e)
         {
             profilesTable.UpdateTable();
-            UpdateTableLabel();
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +65,6 @@ namespace DatingProgram.Forms
             else
             {
                 profilesTable.SetGenderFilter(GetGenderFilterStatus());
-                UpdateTableLabel();
             }
         }
 
@@ -87,7 +85,6 @@ namespace DatingProgram.Forms
         private void updateButton_Click(object sender, EventArgs e)
         {
             profilesTable.UpdateTable();
-            UpdateTableLabel();
         }
 
         private void checkBoxCity_CheckedChanged(object sender, EventArgs e)
@@ -100,13 +97,11 @@ namespace DatingProgram.Forms
 
             string filter = widgetsEnabled ? textBoxCity.Text : "";
             profilesTable.SetFilterByCity(filter);
-            UpdateTableLabel();
         }
 
         private void cityButton_Click(object sender, EventArgs e)
         {
             profilesTable.SetFilterByCity(textBoxCity.Text);
-            UpdateTableLabel();
         }
 
         private void textBoxCity_TextChanged(object sender, EventArgs e)
@@ -114,7 +109,6 @@ namespace DatingProgram.Forms
             if(textBoxCity.Text == "")
             {
                 profilesTable.SetFilterByCity("");
-                UpdateTableLabel();
             }
         }
 
@@ -150,11 +144,6 @@ namespace DatingProgram.Forms
         {
             return checkBoxMale.Checked && checkBoxFemale.Checked ? GenderFilterStatus.NoFilter
                 : (checkBoxMale.Checked ? GenderFilterStatus.Male : GenderFilterStatus.Female);
-        }
-
-        private void UpdateTableLabel()
-        {
-            emptyTableLabel.Visible = dataGridView.Rows.Count == 0;
         }
     }
 }

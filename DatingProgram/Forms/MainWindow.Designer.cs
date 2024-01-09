@@ -50,6 +50,7 @@ namespace DatingProgram.Forms
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.cityButton = new System.Windows.Forms.Button();
+            this.seeArchiveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAgeFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAgeSecond)).BeginInit();
@@ -332,12 +333,23 @@ namespace DatingProgram.Forms
             this.cityButton.UseVisualStyleBackColor = true;
             this.cityButton.Click += new System.EventHandler(this.cityButton_Click);
             // 
+            // seeArchiveButton
+            // 
+            this.seeArchiveButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.seeArchiveButton.Location = new System.Drawing.Point(59, 3);
+            this.seeArchiveButton.Name = "seeArchiveButton";
+            this.seeArchiveButton.Size = new System.Drawing.Size(208, 42);
+            this.seeArchiveButton.TabIndex = 23;
+            this.seeArchiveButton.Text = "Посмотреть архив";
+            this.seeArchiveButton.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1262, 690);
+            this.Controls.Add(this.seeArchiveButton);
             this.Controls.Add(this.cityButton);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.textBoxCity);
@@ -393,6 +405,7 @@ namespace DatingProgram.Forms
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button cityButton;
+        private System.Windows.Forms.Button seeArchiveButton;
     }
 }
 

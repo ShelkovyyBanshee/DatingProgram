@@ -51,7 +51,7 @@ namespace DatingProgram.Mails
             dataBase.OpenConnection();
 
             var commandFirst = new SqlCommand("DELETE FROM Mails where id = " + mailId + "", dataBase.Connection);
-            var commandSecond = new SqlCommand("update Mails set id = id - 1 where id < " + mailId + "",
+            var commandSecond = new SqlCommand("update Mails set id = id - 1 where id > " + mailId + "",
                 dataBase.Connection);
 
             commandFirst.ExecuteNonQuery();

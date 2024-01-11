@@ -117,10 +117,10 @@ namespace DatingProgram.Forms
             {
                 MailCenter.DeleteMail(mails.Rows[currentMailIndex].Field<int>("id"));
 
-                if (currentMailIndex > 1 || mailsAmount == 1)
+                if (currentMailIndex != 0 || mailsAmount == 1)
                     currentMailIndex -= 1;
                 else
-                    currentMailIndex += 1;
+                    currentMailIndex = 0;
 
                 UpdateActualData(false);
                 UpdateWindowInterface();

@@ -33,7 +33,6 @@
             this.checkBoxMale = new System.Windows.Forms.CheckBox();
             this.checkBoxFemale = new System.Windows.Forms.CheckBox();
             this.ageLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.nameLabel = new System.Windows.Forms.Label();
             this.aboutPersonLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +42,7 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // mainTitleLabel
@@ -97,22 +96,9 @@
             this.ageLabel.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ageLabel.Location = new System.Drawing.Point(18, 589);
             this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(200, 35);
+            this.ageLabel.Size = new System.Drawing.Size(211, 35);
             this.ageLabel.TabIndex = 6;
-            this.ageLabel.Text = "Возраст (лет)";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(239, 594);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(57, 30);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
+            this.ageLabel.Text = "Дата рождения";
             // 
             // nameLabel
             // 
@@ -204,12 +190,21 @@
             this.button1.Text = "Создать профиль";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(251, 592);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(280, 30);
+            this.dateTimePicker1.TabIndex = 18;
+            // 
             // NewUserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(556, 749);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxCity);
             this.Controls.Add(this.textBoxName);
@@ -219,7 +214,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.aboutPersonLabel);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.checkBoxFemale);
             this.Controls.Add(this.checkBoxMale);
@@ -227,7 +221,6 @@
             this.Controls.Add(this.mainTitleLabel);
             this.Name = "NewUserWindow";
             this.Text = "Создание профиля";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,7 +233,6 @@
         private System.Windows.Forms.CheckBox checkBoxMale;
         private System.Windows.Forms.CheckBox checkBoxFemale;
         private System.Windows.Forms.Label ageLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label aboutPersonLabel;
         private System.Windows.Forms.Label label1;
@@ -250,5 +242,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

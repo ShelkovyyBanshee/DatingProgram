@@ -1,61 +1,34 @@
 ﻿using DatingProgram.Data;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace DatingProgram.Forms
 {
     public partial class EditUserWindow : Form
     {
+        public bool EditedSuccessfully => editedSuccessfully;
+
+        // Если пользователь внёс изменения, должно стать true
+        private bool editedSuccessfully = false;
+        
         private DataBase actualProfilesBase;
         private bool maleChecked;
+        private int id;
 
 
-        public EditUserWindow()
+        public EditUserWindow(int id)
         {
+            this.id = id;
             actualProfilesBase = DataBaseAccess.InstantiateProfilesBase();
             InitializeComponent();
-            InitializeCheckBox();
+            InitializeTextFields();
         }
 
-        private void InitializeCheckBox()
-        {
-            checkBoxMale.Checked = true;
-            checkBoxFemale.Checked = false;
-            maleChecked = true;
-        }
-
-        private void checkBoxMale_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxMale.Checked)
-                changeFemaleCheckBoxState(CheckState.Unchecked);
-            else
-                changeMaleCheckBoxState(CheckState.Checked);
-
-            maleChecked = true;
-        }
-
-        private void checkBoxFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxFemale.Checked)
-                changeMaleCheckBoxState(CheckState.Unchecked);
-            else
-                changeFemaleCheckBoxState(CheckState.Checked);
-
-            maleChecked = false;
-        }
-
-        private void changeMaleCheckBoxState(CheckState newState)
-        {
-            checkBoxMale.CheckedChanged -= checkBoxMale_CheckedChanged;
-            checkBoxMale.CheckState = newState;
-            checkBoxMale.CheckedChanged += checkBoxMale_CheckedChanged;
-        }
-
-        private void changeFemaleCheckBoxState(CheckState newState)
-        {
-            checkBoxFemale.CheckedChanged -= checkBoxFemale_CheckedChanged;
-            checkBoxFemale.CheckState = newState;
-            checkBoxFemale.CheckedChanged += checkBoxFemale_CheckedChanged;
+        private void InitializeTextFields()
+        { 
+            // тут по id из таблицы ActualProfiles надо достать нужную запись и перенести значения в поля для ввода
         }
 
         private void textBoxContract_TextChanged(object sender, EventArgs e)

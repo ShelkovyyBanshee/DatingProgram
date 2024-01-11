@@ -25,7 +25,7 @@ namespace DatingProgram.DataTools
             var regDate = row.Field<DateTime>("regdate");
             var gender = row.Field<String>("gender");
             var name = row.Field<String>("name");
-            var age = row.Field<int>("age");
+            var age = DateTimeTools.YearsBetween(row.Field<DateTime>("birthDay"), DateTime.UtcNow);
             var city = row.Field<String>("city");
             var description = row.Field<String>("description");
             var contract = row.Field<String>("contract");

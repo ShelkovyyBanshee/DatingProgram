@@ -6,11 +6,18 @@ namespace DatingProgram.Forms
 {
     public partial class NewUserWindow : Form
     {
+        public bool CreatedSuccessfully => createdSuccessfully;
+
+        // это надо сделать true, если запись удалось добавить
+        private bool createdSuccessfully = false;
+
         private DataBase actualProfilesBase;
         private bool maleChecked;
+        int id;
 
-        public NewUserWindow()
+        public NewUserWindow(int id)
         {
+            this.id = id;
             actualProfilesBase = DataBaseAccess.InstantiateProfilesBase();
             InitializeComponent();
             InitializeCheckBox();

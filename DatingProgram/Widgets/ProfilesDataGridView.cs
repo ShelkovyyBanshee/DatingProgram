@@ -9,6 +9,8 @@ namespace DatingProgram.Widgets
 {
     internal class ProfilesDataGridView
     { 
+        public int ActiveUserId { get { return activeUserId; } set { activeUserId = value; } }
+
         private DataBase dataBase;
 
         private DataGridView dataGridView;
@@ -18,6 +20,8 @@ namespace DatingProgram.Widgets
         private string filterCityName;
         private int bottomOrSingleAge;
         private int upperAge;
+
+        private int activeUserId;
 
         public ProfilesDataGridView(DataGridView dataGridView, Label emptyTableLabel)
         {
@@ -85,7 +89,7 @@ namespace DatingProgram.Widgets
 
         private bool CheckRow(DataRow row)
         {
-            return GenderCheck(row) && CityCheck(row) && AgeCheck(row);
+            return GenderCheck(row) && CityCheck(row) && AgeCheck(row) && IdCheck(row);
            
         }
 
@@ -102,13 +106,19 @@ namespace DatingProgram.Widgets
 
         private bool AgeCheck(DataRow row)
         {
-            int age = row.Field<int>("age");
+            int age = DateTimeTools.YearsBetween(row.Field<DateTime>("birthDay"), DateTime.UtcNow);
 
             if (bottomOrSingleAge != -1 && upperAge != -1)
                 return age <= upperAge && age >= bottomOrSingleAge;
             else if (bottomOrSingleAge != -1)
                 return age == bottomOrSingleAge;
             return true;
+        }
+
+        private bool IdCheck(DataRow row)
+        {
+            int id = row.Field<int>("regid");
+            return id != ActiveUserId;
         }
     }
 }

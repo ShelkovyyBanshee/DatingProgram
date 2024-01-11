@@ -31,12 +31,12 @@ namespace DatingProgram.Forms
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.newProfileButton = new System.Windows.Forms.Button();
-            this.editProfilebutton = new System.Windows.Forms.Button();
+            this.editProfileButton = new System.Windows.Forms.Button();
             this.archiveButton = new System.Windows.Forms.Button();
             this.createMailButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.emptyTableLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.infoLabel = new System.Windows.Forms.Label();
             this.checkBoxMale = new System.Windows.Forms.CheckBox();
             this.checkBoxFemale = new System.Windows.Forms.CheckBox();
             this.checkBoxAge = new System.Windows.Forms.CheckBox();
@@ -51,6 +51,10 @@ namespace DatingProgram.Forms
             this.updateButton = new System.Windows.Forms.Button();
             this.cityButton = new System.Windows.Forms.Button();
             this.seeArchiveButton = new System.Windows.Forms.Button();
+            this.lookForMailsButton = new System.Windows.Forms.Button();
+            this.changeUserButton = new System.Windows.Forms.Button();
+            this.currentUserTitleLabel = new System.Windows.Forms.Label();
+            this.currentUserLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAgeFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAgeSecond)).BeginInit();
@@ -63,12 +67,13 @@ namespace DatingProgram.Forms
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
-            this.dataGridView.Location = new System.Drawing.Point(59, 140);
+            this.dataGridView.Location = new System.Drawing.Point(27, 212);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1150, 405);
+            this.dataGridView.Size = new System.Drawing.Size(1126, 405);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
@@ -78,25 +83,27 @@ namespace DatingProgram.Forms
             this.newProfileButton.FlatAppearance.BorderSize = 10;
             this.newProfileButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newProfileButton.ForeColor = System.Drawing.Color.Black;
-            this.newProfileButton.Location = new System.Drawing.Point(119, 96);
+            this.newProfileButton.Location = new System.Drawing.Point(417, 168);
             this.newProfileButton.Name = "newProfileButton";
-            this.newProfileButton.Size = new System.Drawing.Size(190, 38);
+            this.newProfileButton.Size = new System.Drawing.Size(321, 38);
             this.newProfileButton.TabIndex = 1;
-            this.newProfileButton.Text = "Создать запись";
+            this.newProfileButton.Text = "Создать профиль";
             this.newProfileButton.UseVisualStyleBackColor = true;
+            this.newProfileButton.Click += new System.EventHandler(this.newProfileButton_Click);
             // 
-            // editProfilebutton
+            // editProfileButton
             // 
-            this.editProfilebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(36)))), ((int)(((byte)(116)))));
-            this.editProfilebutton.FlatAppearance.BorderSize = 10;
-            this.editProfilebutton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editProfilebutton.ForeColor = System.Drawing.Color.Black;
-            this.editProfilebutton.Location = new System.Drawing.Point(662, 96);
-            this.editProfilebutton.Name = "editProfilebutton";
-            this.editProfilebutton.Size = new System.Drawing.Size(277, 38);
-            this.editProfilebutton.TabIndex = 2;
-            this.editProfilebutton.Text = "Редактировать запись";
-            this.editProfilebutton.UseVisualStyleBackColor = true;
+            this.editProfileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(36)))), ((int)(((byte)(116)))));
+            this.editProfileButton.FlatAppearance.BorderSize = 10;
+            this.editProfileButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editProfileButton.ForeColor = System.Drawing.Color.Black;
+            this.editProfileButton.Location = new System.Drawing.Point(868, 12);
+            this.editProfileButton.Name = "editProfileButton";
+            this.editProfileButton.Size = new System.Drawing.Size(285, 38);
+            this.editProfileButton.TabIndex = 2;
+            this.editProfileButton.Text = "Редактировать профиль";
+            this.editProfileButton.UseVisualStyleBackColor = true;
+            this.editProfileButton.Click += new System.EventHandler(this.editProfileButton_Click);
             // 
             // archiveButton
             // 
@@ -104,12 +111,13 @@ namespace DatingProgram.Forms
             this.archiveButton.FlatAppearance.BorderSize = 10;
             this.archiveButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.archiveButton.ForeColor = System.Drawing.Color.Black;
-            this.archiveButton.Location = new System.Drawing.Point(945, 96);
+            this.archiveButton.Location = new System.Drawing.Point(744, 168);
             this.archiveButton.Name = "archiveButton";
-            this.archiveButton.Size = new System.Drawing.Size(264, 38);
+            this.archiveButton.Size = new System.Drawing.Size(409, 38);
             this.archiveButton.TabIndex = 3;
-            this.archiveButton.Text = "Добавить запись в архив";
+            this.archiveButton.Text = "Удалить текущий профиль (в архив)";
             this.archiveButton.UseVisualStyleBackColor = true;
+            this.archiveButton.Click += new System.EventHandler(this.archiveButton_Click);
             // 
             // createMailButton
             // 
@@ -117,22 +125,23 @@ namespace DatingProgram.Forms
             this.createMailButton.FlatAppearance.BorderSize = 10;
             this.createMailButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createMailButton.ForeColor = System.Drawing.Color.Black;
-            this.createMailButton.Location = new System.Drawing.Point(327, 96);
+            this.createMailButton.Location = new System.Drawing.Point(223, 12);
             this.createMailButton.Name = "createMailButton";
-            this.createMailButton.Size = new System.Drawing.Size(329, 38);
+            this.createMailButton.Size = new System.Drawing.Size(246, 38);
             this.createMailButton.TabIndex = 4;
-            this.createMailButton.Text = "Сформировать приглашение";
+            this.createMailButton.Text = "Отправить письмо";
             this.createMailButton.UseVisualStyleBackColor = true;
+            this.createMailButton.Click += new System.EventHandler(this.createMailButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(220)))), ((int)(((byte)(254)))));
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(21)))), ((int)(((byte)(145)))));
-            this.label2.Location = new System.Drawing.Point(1137, 25);
+            this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 49);
+            this.label2.Size = new System.Drawing.Size(124, 90);
             this.label2.TabIndex = 7;
             this.label2.Text = "❤";
             // 
@@ -141,28 +150,28 @@ namespace DatingProgram.Forms
             this.emptyTableLabel.AutoSize = true;
             this.emptyTableLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.emptyTableLabel.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.emptyTableLabel.Location = new System.Drawing.Point(67, 187);
+            this.emptyTableLabel.Location = new System.Drawing.Point(35, 259);
             this.emptyTableLabel.Name = "emptyTableLabel";
             this.emptyTableLabel.Size = new System.Drawing.Size(256, 35);
             this.emptyTableLabel.TabIndex = 8;
             this.emptyTableLabel.Text = "Записи не найдены";
             // 
-            // label1
+            // infoLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(59, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(982, 24);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Выделите запись в таблице, чтобы изменить запись, добавить запись в архив или сфо" +
-    "рмировать приглашение";
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.infoLabel.ForeColor = System.Drawing.Color.Purple;
+            this.infoLabel.Location = new System.Drawing.Point(128, 119);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(392, 27);
+            this.infoLabel.TabIndex = 9;
+            this.infoLabel.Text = "Добро пожаловать в Бюро знакомств!";
             // 
             // checkBoxMale
             // 
             this.checkBoxMale.AutoSize = true;
             this.checkBoxMale.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxMale.Location = new System.Drawing.Point(59, 557);
+            this.checkBoxMale.Location = new System.Drawing.Point(27, 629);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(124, 31);
             this.checkBoxMale.TabIndex = 10;
@@ -174,7 +183,7 @@ namespace DatingProgram.Forms
             // 
             this.checkBoxFemale.AutoSize = true;
             this.checkBoxFemale.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxFemale.Location = new System.Drawing.Point(59, 591);
+            this.checkBoxFemale.Location = new System.Drawing.Point(27, 663);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(129, 31);
             this.checkBoxFemale.TabIndex = 11;
@@ -186,7 +195,7 @@ namespace DatingProgram.Forms
             // 
             this.checkBoxAge.AutoSize = true;
             this.checkBoxAge.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxAge.Location = new System.Drawing.Point(241, 557);
+            this.checkBoxAge.Location = new System.Drawing.Point(209, 629);
             this.checkBoxAge.Name = "checkBoxAge";
             this.checkBoxAge.Size = new System.Drawing.Size(303, 31);
             this.checkBoxAge.TabIndex = 12;
@@ -197,7 +206,7 @@ namespace DatingProgram.Forms
             // numericAgeFirst
             // 
             this.numericAgeFirst.Enabled = false;
-            this.numericAgeFirst.Location = new System.Drawing.Point(383, 627);
+            this.numericAgeFirst.Location = new System.Drawing.Point(351, 699);
             this.numericAgeFirst.Maximum = new decimal(new int[] {
             254,
             0,
@@ -223,7 +232,7 @@ namespace DatingProgram.Forms
             this.ageLabelPart1.AutoSize = true;
             this.ageLabelPart1.Enabled = false;
             this.ageLabelPart1.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ageLabelPart1.Location = new System.Drawing.Point(236, 624);
+            this.ageLabelPart1.Location = new System.Drawing.Point(204, 696);
             this.ageLabelPart1.Name = "ageLabelPart1";
             this.ageLabelPart1.Size = new System.Drawing.Size(133, 27);
             this.ageLabelPart1.TabIndex = 14;
@@ -234,7 +243,7 @@ namespace DatingProgram.Forms
             this.ageLabelPart2.AutoSize = true;
             this.ageLabelPart2.Enabled = false;
             this.ageLabelPart2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ageLabelPart2.Location = new System.Drawing.Point(446, 624);
+            this.ageLabelPart2.Location = new System.Drawing.Point(414, 696);
             this.ageLabelPart2.Name = "ageLabelPart2";
             this.ageLabelPart2.Size = new System.Drawing.Size(36, 27);
             this.ageLabelPart2.TabIndex = 15;
@@ -243,7 +252,7 @@ namespace DatingProgram.Forms
             // numericAgeSecond
             // 
             this.numericAgeSecond.Enabled = false;
-            this.numericAgeSecond.Location = new System.Drawing.Point(491, 625);
+            this.numericAgeSecond.Location = new System.Drawing.Point(459, 697);
             this.numericAgeSecond.Maximum = new decimal(new int[] {
             255,
             0,
@@ -269,7 +278,7 @@ namespace DatingProgram.Forms
             this.checkBoxInterval.AutoSize = true;
             this.checkBoxInterval.Enabled = false;
             this.checkBoxInterval.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxInterval.Location = new System.Drawing.Point(241, 591);
+            this.checkBoxInterval.Location = new System.Drawing.Point(209, 663);
             this.checkBoxInterval.Name = "checkBoxInterval";
             this.checkBoxInterval.Size = new System.Drawing.Size(313, 31);
             this.checkBoxInterval.TabIndex = 17;
@@ -281,7 +290,7 @@ namespace DatingProgram.Forms
             // 
             this.checkBoxCity.AutoSize = true;
             this.checkBoxCity.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxCity.Location = new System.Drawing.Point(616, 557);
+            this.checkBoxCity.Location = new System.Drawing.Point(584, 629);
             this.checkBoxCity.Name = "checkBoxCity";
             this.checkBoxCity.Size = new System.Drawing.Size(278, 31);
             this.checkBoxCity.TabIndex = 18;
@@ -294,7 +303,7 @@ namespace DatingProgram.Forms
             this.cityLabel.AutoSize = true;
             this.cityLabel.Enabled = false;
             this.cityLabel.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cityLabel.Location = new System.Drawing.Point(611, 595);
+            this.cityLabel.Location = new System.Drawing.Point(579, 667);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(78, 27);
             this.cityLabel.TabIndex = 19;
@@ -304,7 +313,7 @@ namespace DatingProgram.Forms
             // 
             this.textBoxCity.Enabled = false;
             this.textBoxCity.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxCity.Location = new System.Drawing.Point(695, 589);
+            this.textBoxCity.Location = new System.Drawing.Point(663, 661);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(315, 34);
             this.textBoxCity.TabIndex = 20;
@@ -313,7 +322,7 @@ namespace DatingProgram.Forms
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.updateButton.Location = new System.Drawing.Point(59, 96);
+            this.updateButton.Location = new System.Drawing.Point(27, 168);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(42, 38);
             this.updateButton.TabIndex = 21;
@@ -325,9 +334,9 @@ namespace DatingProgram.Forms
             // 
             this.cityButton.Enabled = false;
             this.cityButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cityButton.Location = new System.Drawing.Point(1016, 589);
+            this.cityButton.Location = new System.Drawing.Point(984, 661);
             this.cityButton.Name = "cityButton";
-            this.cityButton.Size = new System.Drawing.Size(193, 34);
+            this.cityButton.Size = new System.Drawing.Size(169, 34);
             this.cityButton.TabIndex = 22;
             this.cityButton.Text = "Выбрать город";
             this.cityButton.UseVisualStyleBackColor = true;
@@ -336,20 +345,73 @@ namespace DatingProgram.Forms
             // seeArchiveButton
             // 
             this.seeArchiveButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.seeArchiveButton.Location = new System.Drawing.Point(59, 3);
+            this.seeArchiveButton.Location = new System.Drawing.Point(75, 168);
             this.seeArchiveButton.Name = "seeArchiveButton";
-            this.seeArchiveButton.Size = new System.Drawing.Size(208, 42);
+            this.seeArchiveButton.Size = new System.Drawing.Size(336, 38);
             this.seeArchiveButton.TabIndex = 23;
             this.seeArchiveButton.Text = "Посмотреть архив";
             this.seeArchiveButton.UseVisualStyleBackColor = true;
             this.seeArchiveButton.Click += new System.EventHandler(this.seeArchiveButton_Click);
+            // 
+            // lookForMailsButton
+            // 
+            this.lookForMailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(36)))), ((int)(((byte)(116)))));
+            this.lookForMailsButton.FlatAppearance.BorderSize = 10;
+            this.lookForMailsButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lookForMailsButton.ForeColor = System.Drawing.Color.Black;
+            this.lookForMailsButton.Location = new System.Drawing.Point(27, 12);
+            this.lookForMailsButton.Name = "lookForMailsButton";
+            this.lookForMailsButton.Size = new System.Drawing.Size(190, 38);
+            this.lookForMailsButton.TabIndex = 24;
+            this.lookForMailsButton.Text = "Мои письма";
+            this.lookForMailsButton.UseVisualStyleBackColor = true;
+            this.lookForMailsButton.Click += new System.EventHandler(this.lookForMailsButton_Click);
+            // 
+            // changeUserButton
+            // 
+            this.changeUserButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(36)))), ((int)(((byte)(116)))));
+            this.changeUserButton.FlatAppearance.BorderSize = 10;
+            this.changeUserButton.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.changeUserButton.ForeColor = System.Drawing.Color.Black;
+            this.changeUserButton.Location = new System.Drawing.Point(475, 12);
+            this.changeUserButton.Name = "changeUserButton";
+            this.changeUserButton.Size = new System.Drawing.Size(387, 38);
+            this.changeUserButton.TabIndex = 25;
+            this.changeUserButton.Text = "Выбрать как текущий профиль";
+            this.changeUserButton.UseVisualStyleBackColor = true;
+            this.changeUserButton.Click += new System.EventHandler(this.changeUserButton_Click);
+            // 
+            // currentUserTitleLabel
+            // 
+            this.currentUserTitleLabel.AutoSize = true;
+            this.currentUserTitleLabel.Font = new System.Drawing.Font("Arial Narrow", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentUserTitleLabel.ForeColor = System.Drawing.Color.Purple;
+            this.currentUserTitleLabel.Location = new System.Drawing.Point(864, 57);
+            this.currentUserTitleLabel.Name = "currentUserTitleLabel";
+            this.currentUserTitleLabel.Size = new System.Drawing.Size(197, 22);
+            this.currentUserTitleLabel.TabIndex = 26;
+            this.currentUserTitleLabel.Text = "Текущий пользователь: ";
+            // 
+            // currentUserLabel
+            // 
+            this.currentUserLabel.AutoSize = true;
+            this.currentUserLabel.Font = new System.Drawing.Font("Arial Narrow", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentUserLabel.Location = new System.Drawing.Point(864, 79);
+            this.currentUserLabel.Name = "currentUserLabel";
+            this.currentUserLabel.Size = new System.Drawing.Size(204, 22);
+            this.currentUserLabel.TabIndex = 27;
+            this.currentUserLabel.Text = "Пользователь не выбран";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1262, 690);
+            this.ClientSize = new System.Drawing.Size(1181, 819);
+            this.Controls.Add(this.currentUserLabel);
+            this.Controls.Add(this.currentUserTitleLabel);
+            this.Controls.Add(this.changeUserButton);
+            this.Controls.Add(this.lookForMailsButton);
             this.Controls.Add(this.seeArchiveButton);
             this.Controls.Add(this.cityButton);
             this.Controls.Add(this.updateButton);
@@ -364,12 +426,12 @@ namespace DatingProgram.Forms
             this.Controls.Add(this.checkBoxAge);
             this.Controls.Add(this.checkBoxFemale);
             this.Controls.Add(this.checkBoxMale);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.emptyTableLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.createMailButton);
             this.Controls.Add(this.archiveButton);
-            this.Controls.Add(this.editProfilebutton);
+            this.Controls.Add(this.editProfileButton);
             this.Controls.Add(this.newProfileButton);
             this.Controls.Add(this.dataGridView);
             this.Name = "MainWindow";
@@ -387,12 +449,12 @@ namespace DatingProgram.Forms
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button newProfileButton;
-        private System.Windows.Forms.Button editProfilebutton;
+        private System.Windows.Forms.Button editProfileButton;
         private System.Windows.Forms.Button archiveButton;
         private System.Windows.Forms.Button createMailButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label emptyTableLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.CheckBox checkBoxMale;
         private System.Windows.Forms.CheckBox checkBoxFemale;
         private System.Windows.Forms.CheckBox checkBoxAge;
@@ -407,6 +469,10 @@ namespace DatingProgram.Forms
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button cityButton;
         private System.Windows.Forms.Button seeArchiveButton;
+        private System.Windows.Forms.Button lookForMailsButton;
+        private System.Windows.Forms.Button changeUserButton;
+        private System.Windows.Forms.Label currentUserTitleLabel;
+        private System.Windows.Forms.Label currentUserLabel;
     }
 }
 

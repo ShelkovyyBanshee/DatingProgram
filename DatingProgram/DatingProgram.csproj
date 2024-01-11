@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTools\DataBaseTools.cs" />
+    <Compile Include="DataTools\DateTimeTools.cs" />
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Data\DateBaseAccess.cs" />
     <Compile Include="Forms\ArchiveWindow.cs">
@@ -54,6 +56,7 @@
     <Compile Include="Forms\ArchiveWindow.Designer.cs">
       <DependentUpon>ArchiveWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormsCommunicationChannel.cs" />
     <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +69,17 @@
     <Compile Include="Forms\EditUserWindow.Designer.cs">
       <DependentUpon>EditUserWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MeetingWindow.cs">
+    <Compile Include="Forms\NewMailWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MeetingWindow.Designer.cs">
-      <DependentUpon>MeetingWindow.cs</DependentUpon>
+    <Compile Include="Forms\NewMailWindow.Designer.cs">
+      <DependentUpon>NewMailWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MyMailsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MyMailsWindow.Designer.cs">
+      <DependentUpon>MyMailsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewUserWindow.cs">
       <SubType>Form</SubType>
@@ -79,6 +88,7 @@
       <DependentUpon>NewUserWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTools\TableTools.cs" />
+    <Compile Include="Mails\MailCenter.cs" />
     <Compile Include="Widgets\AgeFilter.cs" />
     <Compile Include="Widgets\GenderFilterStatus.cs" />
     <Compile Include="Widgets\ProfilesDataGridView.cs" />
@@ -92,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditUserWindow.resx">
       <DependentUpon>EditUserWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MyMailsWindow.resx">
+      <DependentUpon>MyMailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewMailWindow.resx">
+      <DependentUpon>NewMailWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewUserWindow.resx">
       <DependentUpon>NewUserWindow.cs</DependentUpon>

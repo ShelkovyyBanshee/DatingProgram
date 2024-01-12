@@ -89,6 +89,25 @@ namespace DatingProgram.Forms
             checkBoxFemale.CheckedChanged -= checkBoxFemale_CheckedChanged;
             checkBoxFemale.Checked = true;
             checkBoxFemale.CheckedChanged += checkBoxFemale_CheckedChanged;
+
+            numericAgeFirst.Validated += NumericAgeFirst_Validated;
+            numericAgeSecond.Validated += NumericAgeSecond_Validated;
+        }
+
+        private void NumericAgeFirst_Validated(object sender, EventArgs e)
+        {
+            if (numericAgeFirst.Text == "")
+            {
+                numericAgeFirst.Text = numericAgeFirst.Minimum.ToString();
+            }
+        }
+
+        private void NumericAgeSecond_Validated(object sender, EventArgs e)
+        {
+            if (numericAgeSecond.Text == "")
+            {
+                numericAgeSecond.Text = (numericAgeFirst.Value + 1).ToString();
+            }
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -294,7 +313,6 @@ namespace DatingProgram.Forms
                     infoLabel.Text = "Письмо успешно доставлено!";
             }
         }
-
 
         private void lookForMailsButton_Click(object sender, EventArgs e)
         {

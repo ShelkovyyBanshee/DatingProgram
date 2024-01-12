@@ -43,7 +43,6 @@ namespace DatingProgram.Forms
                 currentMailIndex = 0;
         }
         
-
         private void UpdateWindowInterface()
         {
             if (mailsAmount != 0)
@@ -97,6 +96,7 @@ namespace DatingProgram.Forms
 
             dataBase.CloseConnection();
         }
+
         private void moveRightButton_Click(object sender, System.EventArgs e)
         {
             infoLabel.Text = "";

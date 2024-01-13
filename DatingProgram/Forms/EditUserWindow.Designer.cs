@@ -143,6 +143,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(308, 35);
             this.textBoxName.TabIndex = 15;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxCity
             // 
@@ -164,6 +165,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Сохранить изменения";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
             // 
@@ -173,6 +175,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(214, 23);
             this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // EditUserWindow
             // 

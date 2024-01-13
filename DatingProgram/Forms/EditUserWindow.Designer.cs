@@ -112,7 +112,6 @@
             this.textBoxAboutMe.Size = new System.Drawing.Size(507, 96);
             this.textBoxAboutMe.TabIndex = 13;
             this.textBoxAboutMe.Text = "";
-            this.textBoxAboutMe.TextChanged += new System.EventHandler(this.textBoxAboutMe_TextChanged);
             // 
             // textBoxContract
             // 

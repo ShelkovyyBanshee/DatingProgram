@@ -35,10 +35,5 @@ namespace DatingProgram.Forms
         {
 
         }
-
-        private void textBoxAboutMe_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

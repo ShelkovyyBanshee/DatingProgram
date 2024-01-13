@@ -278,7 +278,7 @@ namespace DatingProgram.Forms
             dataBase.OpenConnection();
 
             var adapterActual = new SqlDataAdapter("SELECT * FROM ActualProfiles", dataBase.Connection);
-            var adapterArchive = new SqlDataAdapter("SELECT * FROM ActualProfiles", dataBase.Connection);
+            var adapterArchive = new SqlDataAdapter("SELECT * FROM Archive", dataBase.Connection);
 
             adapterActual.Fill(actual);
             adapterArchive.Fill(archive);
@@ -292,6 +292,7 @@ namespace DatingProgram.Forms
             {
                 infoLabel.Text = "Вы создали профиль и вошли в него!";
                 ActiveUserId = id;
+                currentUserLabel.Text = (string)DataBaseTools.GetFieldById(dataBase, "ActualProfiles", "name", id);
             }
                 
             UpdateTable();

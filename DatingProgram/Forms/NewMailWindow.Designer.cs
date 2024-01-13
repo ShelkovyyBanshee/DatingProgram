@@ -36,6 +36,8 @@
             this.sendMailButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.receiverNameLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@
             // 
             this.textBox.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox.Location = new System.Drawing.Point(16, 113);
-            this.textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(480, 267);
             this.textBox.TabIndex = 3;
@@ -87,7 +89,7 @@
             // 
             this.sendMailButton.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sendMailButton.Location = new System.Drawing.Point(190, 394);
-            this.sendMailButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sendMailButton.Margin = new System.Windows.Forms.Padding(2);
             this.sendMailButton.Name = "sendMailButton";
             this.sendMailButton.Size = new System.Drawing.Size(136, 34);
             this.sendMailButton.TabIndex = 4;
@@ -118,12 +120,22 @@
             this.receiverNameLabel.TabIndex = 6;
             this.receiverNameLabel.Text = "Имя пользователя ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(427, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 50);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // NewMailWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(518, 438);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.receiverNameLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.sendMailButton);
@@ -132,9 +144,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewMailWindow";
             this.Text = "MeetingWindow";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Button sendMailButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label receiverNameLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

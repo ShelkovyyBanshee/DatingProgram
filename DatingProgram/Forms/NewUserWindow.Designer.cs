@@ -74,7 +74,7 @@
             this.checkBoxMale.AutoSize = true;
             this.checkBoxMale.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBoxMale.Location = new System.Drawing.Point(92, 74);
-            this.checkBoxMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxMale.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(119, 33);
             this.checkBoxMale.TabIndex = 4;
@@ -87,7 +87,7 @@
             this.checkBoxFemale.AutoSize = true;
             this.checkBoxFemale.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBoxFemale.Location = new System.Drawing.Point(92, 110);
-            this.checkBoxFemale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxFemale.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(118, 33);
             this.checkBoxFemale.TabIndex = 5;
@@ -154,7 +154,7 @@
             // 
             this.textBoxAboutMe.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxAboutMe.Location = new System.Drawing.Point(18, 263);
-            this.textBoxAboutMe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAboutMe.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAboutMe.MaxLength = 150;
             this.textBoxAboutMe.Name = "textBoxAboutMe";
             this.textBoxAboutMe.Size = new System.Drawing.Size(381, 79);
@@ -166,7 +166,7 @@
             // 
             this.textBoxContract.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxContract.Location = new System.Drawing.Point(18, 384);
-            this.textBoxContract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxContract.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxContract.MaxLength = 150;
             this.textBoxContract.Name = "textBoxContract";
             this.textBoxContract.Size = new System.Drawing.Size(381, 79);
@@ -178,7 +178,7 @@
             // 
             this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.Location = new System.Drawing.Point(92, 152);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.MaxLength = 28;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(308, 35);
@@ -189,17 +189,18 @@
             // 
             this.textBoxCity.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxCity.Location = new System.Drawing.Point(92, 185);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCity.MaxLength = 28;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(308, 35);
             this.textBoxCity.TabIndex = 16;
+            this.textBoxCity.TextChanged += new System.EventHandler(this.textBoxCity_TextChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(64, 532);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(290, 46);
             this.button1.TabIndex = 17;
@@ -211,10 +212,11 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Location = new System.Drawing.Point(188, 481);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(211, 26);
             this.dateTimePicker1.TabIndex = 18;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // NewUserWindow
             // 
@@ -238,7 +240,7 @@
             this.Controls.Add(this.genderLabel);
             this.Controls.Add(this.mainTitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewUserWindow";
             this.Text = "Новый пользователь";
             this.Load += new System.EventHandler(this.NewUserWindow_Load);

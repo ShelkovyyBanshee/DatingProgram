@@ -114,7 +114,7 @@
             // 
             this.textBoxAboutMe.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxAboutMe.Location = new System.Drawing.Point(26, 180);
-            this.textBoxAboutMe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAboutMe.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAboutMe.MaxLength = 150;
             this.textBoxAboutMe.Name = "textBoxAboutMe";
             this.textBoxAboutMe.Size = new System.Drawing.Size(381, 79);
@@ -126,7 +126,7 @@
             // 
             this.textBoxContract.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxContract.Location = new System.Drawing.Point(26, 301);
-            this.textBoxContract.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxContract.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxContract.MaxLength = 150;
             this.textBoxContract.Name = "textBoxContract";
             this.textBoxContract.Size = new System.Drawing.Size(381, 79);
@@ -138,7 +138,7 @@
             // 
             this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.Location = new System.Drawing.Point(99, 68);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.MaxLength = 28;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(308, 35);
@@ -148,7 +148,7 @@
             // 
             this.textBoxCity.Font = new System.Drawing.Font("Arial Narrow", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxCity.Location = new System.Drawing.Point(99, 102);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCity.MaxLength = 28;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(308, 35);
@@ -158,7 +158,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(61, 454);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(316, 46);
             this.button1.TabIndex = 17;
@@ -169,7 +169,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Location = new System.Drawing.Point(193, 400);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(214, 23);
             this.dateTimePicker1.TabIndex = 18;
@@ -193,9 +193,8 @@
             this.Controls.Add(this.ageLabel);
             this.Controls.Add(this.mainTitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditUserWindow";
-            this.Text = "Создание профиля";
             this.ResumeLayout(false);
             this.PerformLayout();
 

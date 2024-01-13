@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Diagnostics.Contracts;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -16,6 +17,7 @@ namespace DatingProgram.Forms
         private bool createdSuccessfully = false;
 
         private DataBase actualProfilesBase;
+        DateTime localDate = DateTime.Now;
         private bool maleChecked;
         int id;
 
@@ -81,16 +83,49 @@ namespace DatingProgram.Forms
         private void NewUserWindow_Load(object sender, EventArgs e)
         {
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //добавление в базу
         {
+            String Gender;
+            if (maleChecked) //мужчина
+            {
+                Gender = "М";
+            }
+            else //женщина
+            {
+                Gender = "Ж";
+            }
             actualProfilesBase.OpenConnection();
 
-            SqlCommand Command = new SqlCommand("insert into ActualProfiles(regid, regdate, gender, name, birthDay, city, description, contract) values(2, '2024-01-07 12:30:30:00', N'Ж', N'Натали Портамн', '1981-06-09', N'', N'Монтесито', N'Актриса', N'Ищу сильного мужчину, на которого можно опереться')");
-            Command.Parameters.Add("@regid", Convert.ToString(id));
+            SqlCommand Command = new SqlCommand(
+                 $"INSERT INTO ActualProfiles(regdate, gender, name, birthDay, city, description, contract) values(@regdate, @gender, @name, @birthDay, @city, @description, @contract)",
+                 actualProfilesBase.GetConnection());
+            DateTime date = DateTime.Parse(dateTimePicker1.Text);
+            Command.Parameters.AddWithValue("regdate", localDate);
+            Command.Parameters.AddWithValue("gender", Gender);
+            Command.Parameters.AddWithValue("name", textBoxName.Text.ToString());
+            Command.Parameters.AddWithValue("birthDay", $"{date.Month }/{ date.Day}/{ date.Year}");
+            Command.Parameters.AddWithValue("city", textBoxCity.Text.ToString());
+            Command.Parameters.AddWithValue("description", textBoxAboutMe.Text.ToString());
+            Command.Parameters.AddWithValue("contract", textBoxContract.Text.ToString());
+
+
+            MessageBox.Show(Command.ExecuteNonQuery().ToString());
             createdSuccessfully = true;
-            Command.ExecuteNonQuery();
+            
+            
+            
         }
         private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

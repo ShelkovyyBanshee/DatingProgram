@@ -108,7 +108,7 @@ namespace DatingProgram.Forms
                 Command.Parameters.AddWithValue("contract", textBoxContract.Text.ToString());
 
                 Command.ExecuteNonQuery().ToString();
-                MessageBox.Show("Вы успешно заполнили профиль <3");
+                MessageBox.Show("Вы успешно создали профиль!\nБудем рады, чтобы вы нашли себе здесь новых друзей!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 createdSuccessfully = true;
                 actualProfilesBase.CloseConnection();
                 Close();

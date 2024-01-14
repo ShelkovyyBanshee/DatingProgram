@@ -24,5 +24,9 @@ namespace DatingProgram.Data
             if (sqlConnection.State == System.Data.ConnectionState.Open)
                 sqlConnection.Close();
         }
+        public SqlConnection GetConnection()
+        {
+            return sqlConnection;
+        }
     }
 }

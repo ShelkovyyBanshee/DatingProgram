@@ -76,40 +76,40 @@ namespace DatingProgram.Forms
                 Command.Parameters.AddWithValue("contract", textBoxContract.Text.ToString());
 
                 Command.ExecuteNonQuery();
-                MessageBox.Show("Вы успешно редактировали профиль!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Профиль успешно отредактирован!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 editedSuccessfully = true;
                 actualProfilesBase.CloseConnection();
                 Close();
             }
             else
             {
-                String ErrBox = "Неверно введенные данные!!!\n";
+                String ErrBox = "Данные введены неверно!\n";
                 if (!IsCorrectCity() && textBoxCity.Text != "")
                 {
-                    ErrBox += "Неправильно введён город\n";
+                    ErrBox += "- В названии города есть недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n";
                 }
                 else if (!IsCorrectCity() && textBoxCity.Text == "")
                 {
-                    ErrBox += "Вы не ввели данные в обязательное поле Город\n";
+                    ErrBox += "- Вы не ввели данные в обязательное поле Город.\n";
                 }
                 if (!IsCorrectName() && textBoxName.Text != "")
                 {
-                    ErrBox += "Неправильно введено имя\n";
+                    ErrBox += "- Введённое имя содержит недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n";
                 }
                 else if (!IsCorrectName() && textBoxName.Text == "")
                 {
-                    ErrBox += "Вы не ввели данные в обязательное поле Имя\n";
+                    ErrBox += "- Вы не ввели данные в обязательное поле Имя.\n";
                 }
                 if (!IsCorrectDate())
                 {
-                    ErrBox += "Ваш возраст должен быть больше 16 лет\n";
+                    ErrBox += "- Ваш возраст должен быть не меньше 16 лет.\n";
                 }
 
                 var res = MessageBox.Show(ErrBox, "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                if (res == DialogResult.Cancel)
-                {
-                    Close();
-                }
+                //if (res == DialogResult.Cancel)
+                //{
+                //    Close();
+                //}
             }
             
         }

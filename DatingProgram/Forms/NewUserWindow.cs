@@ -118,30 +118,26 @@ namespace DatingProgram.Forms
                 String ErrBox = "Неверно введенные данные!!!\n";
                 if (!IsCorrectCity()&& textBoxCity.Text != "")
                 {
-                    ErrBox += "Неправильно введён город\n";
+                    ErrBox += "- Введённый город содержит недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n\n";
                 }
                 else if (!IsCorrectCity() && textBoxCity.Text == "")
                 {
-                    ErrBox += "Вы не ввели данные в обязательное поле Город\n";
+                    ErrBox += "- Вы не ввели данные в обязательное поле Город\n";
                 }
                 if (!IsCorrectName() && textBoxName.Text != "")
                 {
-                    ErrBox += "Неправильно введено имя\n";
+                    ErrBox += "- Введённое имя содержит недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n";
                 }
                 else if (!IsCorrectName() && textBoxName.Text == "")
                 {
-                    ErrBox += "Вы не ввели данные в обязательное поле Имя\n";
+                    ErrBox += "- Вы не ввели данные в обязательное поле Имя\n";
                 }
                 if (!IsCorrectDate())
                 {
-                    ErrBox += "Ваш возраст должен быть больше 16 лет\n";
+                    ErrBox += "- Ваш возраст должен быть не меньше 16 лет\n";
                 }
 
                 var res = MessageBox.Show(ErrBox, "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                if (res == DialogResult.Cancel)
-                {
-                    Close();
-                }
             }
    
             

@@ -218,7 +218,7 @@ namespace DatingProgram.Forms
             this.numericAgeFirst.Location = new System.Drawing.Point(351, 699);
             this.numericAgeFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericAgeFirst.Maximum = new decimal(new int[] {
-            254,
+            255,
             0,
             0,
             0});
@@ -265,7 +265,7 @@ namespace DatingProgram.Forms
             this.numericAgeSecond.Location = new System.Drawing.Point(459, 697);
             this.numericAgeSecond.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericAgeSecond.Maximum = new decimal(new int[] {
-            255,
+            256,
             0,
             0,
             0});

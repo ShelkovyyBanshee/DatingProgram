@@ -13,7 +13,6 @@ namespace DatingProgram.Forms
     {
         public bool EditedSuccessfully => editedSuccessfully;
 
-        // Если пользователь внёс изменения, должно стать true
         private bool editedSuccessfully = false;
         
         private DataBase actualProfilesBase;
@@ -102,8 +101,11 @@ namespace DatingProgram.Forms
                 }
                 if (!IsCorrectDate())
                 {
-                    ErrBox += "- Ваш возраст должен быть не меньше 16 лет.\n";
-                }
+                    if (DateTimeTools.YearsBetween(dateTimePicker1.Value, DateTime.UtcNow) < 16)
+                        ErrBox += "- Ваш возраст должен быть не меньше 16 лет.\n";
+                    else
+                        ErrBox += "- Превышен максимальный возраст - 255!\n";
+                }       
 
                 var res = MessageBox.Show(ErrBox, "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 //if (res == DialogResult.Cancel)
@@ -113,15 +115,17 @@ namespace DatingProgram.Forms
             }
             
         }
-        //проверка правильности введенных данных
+        
         private bool IsCorrectCity()
         {
             return textBoxCity.Text.All(c => Char.IsLetterOrDigit(c) || c == '-' || c == ' ') && textBoxCity.Text != "";
         }
+
         private bool IsCorrectName()
         {
             return textBoxName.Text.All(c => Char.IsLetterOrDigit(c) || c == '-' || c == ' ') && textBoxName.Text != "";
         }
+
         private bool IsCorrectDate()
         {
             return DateTimeTools.YearsBetween(dateTimePicker1.Value, localDate) >= 16;

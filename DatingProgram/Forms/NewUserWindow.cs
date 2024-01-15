@@ -16,12 +16,7 @@ namespace DatingProgram.Forms
     {
         public bool CreatedSuccessfully => createdSuccessfully;
         
-        // это надо сделать true, если запись удалось добавить
         private bool createdSuccessfully = false;
-
-        //проверки
-        private bool nameIsCorrect = true;
-
 
         private DataBase actualProfilesBase;
         DateTime localDate = DateTime.Now;
@@ -76,9 +71,8 @@ namespace DatingProgram.Forms
             checkBoxFemale.CheckState = newState;
             checkBoxFemale.CheckedChanged += checkBoxFemale_CheckedChanged;
         }
-
         
-        private void button1_Click(object sender, EventArgs e) //добавление в базу
+        private void button1_Click(object sender, EventArgs e) 
         {
 
             if (IsCorrectCity() && IsCorrectName() && IsCorrectDate())
@@ -108,7 +102,7 @@ namespace DatingProgram.Forms
                 Command.Parameters.AddWithValue("contract", textBoxContract.Text.ToString());
 
                 Command.ExecuteNonQuery().ToString();
-                MessageBox.Show("Вы успешно создали профиль!\nБудем рады, чтобы вы нашли себе здесь новых друзей!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Вы успешно создали профиль!\nУспешных знакомств!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 createdSuccessfully = true;
                 actualProfilesBase.CloseConnection();
                 Close();
@@ -118,7 +112,7 @@ namespace DatingProgram.Forms
                 String ErrBox = "Неверно введенные данные!!!\n";
                 if (!IsCorrectCity()&& textBoxCity.Text != "")
                 {
-                    ErrBox += "- Введённый город содержит недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n\n";
+                    ErrBox += "- Введённый город содержит недопустимые знаки. Разрешаются буквы латиницы и кириллицы, цифры и тире.\n";
                 }
                 else if (!IsCorrectCity() && textBoxCity.Text == "")
                 {
@@ -134,7 +128,10 @@ namespace DatingProgram.Forms
                 }
                 if (!IsCorrectDate())
                 {
-                    ErrBox += "- Ваш возраст должен быть не меньше 16 лет\n";
+                    if (DateTimeTools.YearsBetween(dateTimePicker1.Value, DateTime.UtcNow) < 16)
+                        ErrBox += "- Ваш возраст должен быть не меньше 16 лет.\n";
+                    else
+                        ErrBox += "- Превышен максимальный возраст - 255!\n";
                 }
 
                 var res = MessageBox.Show(ErrBox, "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
@@ -142,11 +139,12 @@ namespace DatingProgram.Forms
    
             
         }
-        //Проверка правильности заполнения данных
+        
         private bool IsCorrectCity()
         {
             return textBoxCity.Text.All(c => Char.IsLetterOrDigit(c) || c == '-' || c == ' ') && textBoxCity.Text != "";
         }
+
         private bool IsCorrectName()
         {
             return textBoxName.Text.All(c => Char.IsLetterOrDigit(c) || c == '-' || c == ' ') && textBoxName.Text != "";
@@ -156,7 +154,6 @@ namespace DatingProgram.Forms
         {
             return DateTimeTools.YearsBetween(dateTimePicker1.Value, localDate) >= 16;
         }
-
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
@@ -172,6 +169,7 @@ namespace DatingProgram.Forms
         {
 
         }
+
         private void textBoxContract_TextChanged(object sender, EventArgs e)
         {
 

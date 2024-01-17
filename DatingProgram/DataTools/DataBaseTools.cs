@@ -5,10 +5,12 @@ using System.Linq;
 using System.Security.Cryptography;
 using DatingProgram.Data;
 
+// статический класс, реализующий методы для получения данных из базы DataBase
 namespace DatingProgram.DataTools
 {
     internal static class DataBaseTools
     {
+        // метод удаляет строчку с id = rowId из первой базы и добавляет во вторую базу под тем же id
         public static void RemoveAndAdd(int rowId, DataBase dataBase, 
             string nameRemove, string nameAdd)
         {
@@ -26,6 +28,7 @@ namespace DatingProgram.DataTools
             dataBase.CloseConnection();
         }
 
+        // Метод возвращает значение выбранного поля в строчке по её id
         public static object GetFieldById(DataBase dataBase, string tableName, string fieldName, int id)
         {
             dataBase.OpenConnection();
@@ -37,6 +40,7 @@ namespace DatingProgram.DataTools
             return result;
         }
 
+        // Метод получения Строчки из таблицы по её id
         public static DataRow GetRowFromTable(DataBase dataBase, string tableName, int rowId)
         {
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM " + tableName +
@@ -48,6 +52,7 @@ namespace DatingProgram.DataTools
             return table.Rows[0];
         }
 
+        // Метод, проверяющий, существует ли строчка, по её id
         public static bool IdExist(DataBase dataBase, string tableName, string idFieldName, int id)
         {
             var adapter = new SqlDataAdapter("SELECT * FROM " + tableName +
@@ -58,6 +63,7 @@ namespace DatingProgram.DataTools
             return table.Rows.Count != 0;
         }
 
+        // Метод переводящий строчку DataRow в массив object
         private static object[] DataRowToObject(DataRow row)
         {
             var regId = row.Field<int>("regid");
@@ -73,6 +79,7 @@ namespace DatingProgram.DataTools
             return result;
         }
 
+        // Метод для генерации команды добавления профиля в таблицу
         private static SqlCommand GenerateInsertProfileCommand(DataBase dataBase, string
             tableName, object[] values)
         {

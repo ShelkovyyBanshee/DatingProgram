@@ -5,10 +5,12 @@ using System.Windows.Forms;
 
 namespace DatingProgram.Mails
 {
+    // Класс для работы с базой данных писем
     internal static class MailCenter
     {
         private static DataBase dataBase = DataBaseAccess.InstantiateProfilesBase();
-
+        
+        // Метод отправки письма (в базу)
         public static void SendMail(int senderId, int receiverId, string text)
         {
             dataBase.OpenConnection();
@@ -32,6 +34,7 @@ namespace DatingProgram.Mails
             dataBase.CloseConnection();
         }
 
+        // Метод получения писем пользователя по id
         public static DataTable GetUsersMail(int userId)
         {
             dataBase.OpenConnection();
@@ -46,6 +49,7 @@ namespace DatingProgram.Mails
             return result;
         }
 
+        // Метод удаления письма из базы по id
         public static void DeleteMail(int mailId)
         {
             dataBase.OpenConnection();

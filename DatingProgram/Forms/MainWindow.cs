@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using DatingProgram.Data;
 using DatingProgram.DataTools;
@@ -13,10 +12,9 @@ namespace DatingProgram.Forms
     {
         public delegate void ProfileMovedToArchiveHandler();
         public event ProfileMovedToArchiveHandler profileMovedToArchive;
-        // Доступ к базе данных
+        
         private DataBase dataBase;
 
-        // Дополнительные виджеты
         private ProfilesDataGridView profilesTable;
         private AgeFilter ageFilter;
 
@@ -113,11 +111,6 @@ namespace DatingProgram.Forms
         private void MainWindow_Load(object sender, EventArgs e)
         {
             profilesTable.UpdateTable();
-        }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void checkBoxMale_CheckedChanged(object sender, EventArgs e)

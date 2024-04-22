@@ -4,7 +4,6 @@ namespace DatingProgram.Data
 {
     internal class DataBase
     {
-        // подключение к базе
         public SqlConnection Connection => sqlConnection;
 
         private SqlConnection sqlConnection;

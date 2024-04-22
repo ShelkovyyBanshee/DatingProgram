@@ -21,7 +21,8 @@ namespace DatingProgram.Forms
 
             InitializeComponent();
 
-            receiverNameLabel.Text = (string)DataBaseTools.GetFieldById(dataBase, "ActualProfiles", "name", receiverId);
+            receiverNameLabel.Text = (string)DataBaseTools.GetFieldById(dataBase, 
+                "ActualProfiles", "name", receiverId);
         }
 
         private void sendMailButton_Click(object sender, System.EventArgs e)

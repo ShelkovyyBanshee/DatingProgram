@@ -125,7 +125,6 @@
             this.textBoxContract.Size = new System.Drawing.Size(507, 96);
             this.textBoxContract.TabIndex = 14;
             this.textBoxContract.Text = "";
-            this.textBoxContract.TextChanged += new System.EventHandler(this.textBoxContract_TextChanged);
             // 
             // textBoxName
             // 

@@ -1,14 +1,11 @@
 ﻿using System.Data;
 using System;
-using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace DatingProgram.DataTools
 {
-    // Статический класс, реализующий методы для работы с таблицами DataTable
     internal static class TableTools
     {
-        // Метод, заполняющий шапку таблицы профилей
         public static void AddColumnsToProfilesTable(DataTable table)
         {
             table.Columns.Add("Регистрационный номер");
@@ -21,7 +18,6 @@ namespace DatingProgram.DataTools
             table.Columns.Add("Требования к партнеру");
         }
 
-        // Метод, который переводит DataRow в массив object
         public static object[] DataRowToObject(DataRow row)
         {
             var regId = row.Field<int>("regid");
@@ -37,13 +33,11 @@ namespace DatingProgram.DataTools
             return result;
         }
 
-        // Метод, добавляющий строку в таблицу
         public static void IncludeRow(DataTable table, DataRow row)
         {
             table.Rows.Add(DataRowToObject(row));
         }
 
-        // Метод, заполняющий таблицу с помощью адаптора
         public static void FillProfilesTable(DataTable table, SqlDataAdapter adapter)
         {
             DataTable tempTable = new DataTable();

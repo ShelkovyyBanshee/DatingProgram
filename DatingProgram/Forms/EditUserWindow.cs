@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using DatingProgram.DataTools;
 using System.Linq;
-using System.Data.SqlTypes;
+
 
 namespace DatingProgram.Forms
 {
@@ -32,7 +32,7 @@ namespace DatingProgram.Forms
         private void InitializeTextFields()
         {
             actualProfilesBase.OpenConnection();
-            // тут по id из таблицы ActualProfiles надо достать нужную запись и перенести значения в поля для ввода
+           
             var Row = DataBaseTools.GetRowFromTable(actualProfilesBase, "ActualProfiles", id);
 
             String name = Row.Field<String>("name");
@@ -47,16 +47,6 @@ namespace DatingProgram.Forms
             textBoxContract.Text = contract;
 
             actualProfilesBase.CloseConnection();
-        }
-
-        private void textBoxContract_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxAboutMe_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -129,18 +119,6 @@ namespace DatingProgram.Forms
         private bool IsCorrectDate()
         {
             return DateTimeTools.YearsBetween(dateTimePicker1.Value, localDate) >= 16;
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,14 +1,10 @@
 ﻿using DatingProgram.Data;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Diagnostics.Contracts;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using System.Linq;
 using DatingProgram.DataTools;
+
 
 namespace DatingProgram.Forms
 {
@@ -78,11 +74,11 @@ namespace DatingProgram.Forms
             if (IsCorrectCity() && IsCorrectName() && IsCorrectDate())
             {
                 String Gender;
-                if (maleChecked) //мужчина
+                if (maleChecked)
                 {
                     Gender = "М";
                 }
-                else //женщина
+                else
                 {
                     Gender = "Ж";
                 }

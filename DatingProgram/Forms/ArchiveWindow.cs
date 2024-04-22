@@ -31,7 +31,6 @@ namespace DatingProgram.Forms
             FormsCommunicationChannel.ArchiveW = this;
         }
 
-        // Метод, обновляющий таблицу
         public void UpdateTable()
         {
             dataBase.OpenConnection();
@@ -47,7 +46,6 @@ namespace DatingProgram.Forms
             toActualButton.Enabled = dataGridView.Rows.Count != 0;
         }
 
-        // Метод, вызываемый при закрытии окна
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);

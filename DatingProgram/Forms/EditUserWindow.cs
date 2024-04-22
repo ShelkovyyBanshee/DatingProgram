@@ -20,7 +20,6 @@ namespace DatingProgram.Forms
         private bool maleChecked;
         private int id;
 
-
         public EditUserWindow(int id)
         {
             this.id = id;

@@ -35,14 +35,12 @@ namespace DatingProgram.Widgets
             filterCityName = "";
         }
 
-        // Метод, устанавливающий город для фильтрации или отключающий фильтр, если передана пустая строка
         public void SetFilterByCity(string cityName) 
         {
             filterCityName = cityName;
             UpdateTable();
         }
 
-        // Метод, устанавливающий фильтр по возрасту в виде одного значения
         public void SetFilterByAgeValue(int ageValue)
         {
             bottomOrSingleAge = ageValue;
@@ -50,7 +48,6 @@ namespace DatingProgram.Widgets
             UpdateTable();
         }
 
-        // Метод, устанавливающий фильтр по возрасту в виде промежутка
         public void SetFilterByAgeInterval(int bottomAgeValue, int upperAgeValue)
         {
             bottomOrSingleAge = bottomAgeValue;
@@ -58,14 +55,12 @@ namespace DatingProgram.Widgets
             UpdateTable();
         }
 
-        // Метод, устанавливающий способ фильтрации по полу
         public void SetGenderFilter(GenderFilterStatus filterStatus)
         {
             genderFilterStatus = filterStatus;
             UpdateTable();
         }
 
-        // Метод, обновляющий таблицу dataGriedView
         public void UpdateTable() 
         {
             dataGridView.ClearSelection();
@@ -92,27 +87,23 @@ namespace DatingProgram.Widgets
             emptyTableLabel.Visible = dataGridView.Rows.Count == 0;
         }
 
-        // Метод, проверяющий строчку в таблице на соответствие фильтрам
         private bool CheckRow(DataRow row)
         {
             return GenderCheck(row) && CityCheck(row) && AgeCheck(row) && IdCheck(row);
            
         }
 
-        // Метод, проверяющий строку фильтром по полу
         private bool GenderCheck(DataRow row)
         {
             return genderFilterStatus == GenderFilterStatus.NoFilter ||
                 row.Field<String>("gender") == (genderFilterStatus == GenderFilterStatus.Male ? "М" : "Ж");
         }
 
-        // Метод, проверяющий строчку фильтром по городу
         private bool CityCheck(DataRow row)
         {
             return filterCityName == "" || row.Field<String>("city") == filterCityName;
         }
 
-        // Метод, проверяющий строчку фильтром по возрасту
         private bool AgeCheck(DataRow row)
         {
             int age = DateTimeTools.YearsBetween(row.Field<DateTime>("birthDay"), DateTime.UtcNow);
@@ -124,7 +115,6 @@ namespace DatingProgram.Widgets
             return true;
         }
 
-        // Метод, проверяющий строчку по её id
         private bool IdCheck(DataRow row)
         {
             int id = row.Field<int>("regid");

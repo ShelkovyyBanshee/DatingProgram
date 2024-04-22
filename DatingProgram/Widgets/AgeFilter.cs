@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace DatingProgram.Widgets
 {
@@ -30,7 +29,6 @@ namespace DatingProgram.Widgets
             intervalMode = true;
          }
 
-        // Метод включает (true) или отключает (false) возраст в виде промежутка.
         public void SetIntervalMode(bool intervalMode)
         {
             this.intervalMode = intervalMode;
@@ -47,7 +45,6 @@ namespace DatingProgram.Widgets
                 UpdateTable();
         }
 
-        // Метод, обновляющий элементы окна (true) или отключающий их (false)
         public void SetEnabled(bool enabled)
         {
             if (enabled)
@@ -65,7 +62,6 @@ namespace DatingProgram.Widgets
             }
         }
 
-        // Метод изменения нижней границы возраста
         public void BottomValueChanged()
         {
             if (intervalMode && BottomAge >= UpperAge)
@@ -74,7 +70,6 @@ namespace DatingProgram.Widgets
             UpdateTable();
         }
        
-        // Метод изменения верхней границы возраста
         public void UpperValueChanged()
         {
             if (UpperAge <= BottomAge)
@@ -83,14 +78,12 @@ namespace DatingProgram.Widgets
             UpdateTable();
         }
 
-        // Метод обновления подписей перед полями ввода возраста
         private void UpdateLabels()
         {
             labelPart1.Text = intervalMode ? "Возраст от" : "Возраст";
             labelPart2.Visible = intervalMode;
         }
 
-        // Метод обновляющий таблицу table
         private void UpdateTable()
         {
             if (!intervalMode)

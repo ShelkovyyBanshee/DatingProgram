@@ -155,7 +155,6 @@
             this.textBoxAboutMe.Size = new System.Drawing.Size(507, 96);
             this.textBoxAboutMe.TabIndex = 13;
             this.textBoxAboutMe.Text = "";
-            this.textBoxAboutMe.TextChanged += new System.EventHandler(this.textBoxAboutMe_TextChanged);
             // 
             // textBoxContract
             // 
@@ -167,7 +166,6 @@
             this.textBoxContract.Size = new System.Drawing.Size(507, 96);
             this.textBoxContract.TabIndex = 14;
             this.textBoxContract.Text = "";
-            this.textBoxContract.TextChanged += new System.EventHandler(this.textBoxContract_TextChanged);
             // 
             // textBoxName
             // 
@@ -178,7 +176,6 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(409, 42);
             this.textBoxName.TabIndex = 15;
-            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxCity
             // 
@@ -189,7 +186,6 @@
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(409, 42);
             this.textBoxCity.TabIndex = 16;
-            this.textBoxCity.TextChanged += new System.EventHandler(this.textBoxCity_TextChanged);
             // 
             // button1
             // 
@@ -211,7 +207,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(280, 30);
             this.dateTimePicker1.TabIndex = 18;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -249,7 +244,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NewUserWindow";
             this.Text = "Новый пользователь";
-            this.Load += new System.EventHandler(this.NewUserWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

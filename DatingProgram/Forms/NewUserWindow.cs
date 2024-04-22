@@ -150,39 +150,5 @@ namespace DatingProgram.Forms
         {
             return DateTimeTools.YearsBetween(dateTimePicker1.Value, localDate) >= 16;
         }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxCity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxContract_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxAboutMe_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NewUserWindow_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
